@@ -74,19 +74,29 @@ O sistema é composto por:
 
 ```
 TF05/
-├── api/
-│   ├── app.py
-│   ├── models/
-│   │   └── metrics.py
-│   └── healthchecks/
-│       ├── tcp_check.py
-│       └── db_check.py
+├── README.md
+├── docker-compose.yml
 ├── dashboard/
+│   ├── Dockerfile
 │   ├── index.html
 │   ├── js/
-│   │   └── dashboard.js
+│   │   ├── dashboard.js
+│   │   └── charts.js
+│   └── css/
+│       └── dashboard.css
+├── api/
+│   ├── Dockerfile
+│   ├── app.py
+│   ├── models/
+│   │   ├── metrics.py
+│   │   └── alerts.py
+│   └── healthchecks/
+│       ├── http_check.py
+│       ├── db_check.py
+│       └── custom_check.py
 ├── database/
-│   └── init.sql
+│   ├── init.sql
+│   └── migrations/
 ├── scripts/
 │   ├── build.sh
 │   ├── deploy.sh
@@ -94,8 +104,14 @@ TF05/
 │   ├── backup.sh
 │   ├── cleanup.sh
 │   └── health-monitor.sh
-├── docker-compose.yml
-└── README.md
+├── config/
+│   ├── healthchecks.yml
+│   ├── alerts.yml
+│   └── thresholds.yml
+└── docs/
+    ├── automation.md
+    ├── healthchecks.md
+    └── maintenance.md
 ```
 
 ---
